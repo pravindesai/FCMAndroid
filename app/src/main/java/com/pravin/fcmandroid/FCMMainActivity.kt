@@ -1,6 +1,5 @@
 package com.pravin.fcmandroid
 
-import android.app.ProgressDialog.show
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
