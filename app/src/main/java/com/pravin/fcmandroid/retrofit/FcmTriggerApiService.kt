@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface FcmTriggerApiService {
     companion object{
-        val SERVER_KEY = "key=AAAAyPUsUKo:APA91bEOD6UTa4_LiALbiwWm8P8WMeLA5abxVehtwU-zzBMihOZOEa0t_rMcTRk3pYXBLNan4TSo8Gv_pSY4v8yG_bTUanX1D1qk92E2Oy4bGa-50E79IvmqXT4cfWBIEwrRyOPEYcuy"
+        val SERVER_KEY = "key=_______________________________"
         private val BASE_URL = "https://fcm.googleapis.com/"
         private val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create()).build()
