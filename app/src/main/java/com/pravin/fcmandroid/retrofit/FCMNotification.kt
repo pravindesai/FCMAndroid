@@ -8,7 +8,7 @@ data class FCMNotification(
 	val notification: Notification? = null,
 
 	@field:SerializedName("data")
-	val data: List<String?>? = null,
+	val data: HashMap<String,String>? = null,
 
 	@field:SerializedName("to")
 	val to: String? = null

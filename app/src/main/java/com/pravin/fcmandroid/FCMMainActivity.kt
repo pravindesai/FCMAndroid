@@ -12,7 +12,6 @@ import com.pravin.fcmandroid.retrofit.FcmTriggerApiService
 import com.pravin.fcmandroid.retrofit.Notification
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class FCMMainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
     lateinit var binding: ActivityMainBinding
@@ -76,13 +75,20 @@ class FCMMainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListe
 
     fun sendnotification(view: android.view.View) {
         triggerNotificationToToken(token)
-        Snackbar.make(view, "Notification should not be sent from device", Snackbar.LENGTH_SHORT).show()
+        Snackbar.make(view, "Notification should not be sent from device but from App server", Snackbar.LENGTH_SHORT).show()
 
     }
 
     private fun triggerNotificationToToken(token:String) {
+
         val fcmNotification = FCMNotification(
-            Notification(title = "Title", body = "Body"),
+            notification = Notification(
+                            title = "Title",
+                            body = "Body",
+                            image = "https://cdn.mos.cms.futurecdn.net/TiGR9cagP5nwBtZ6obwFk6-1024-80.jpeg",
+                            color = "#2CD08C",
+                            icon = "ic_notification"),
+            data = hashMapOf("KEY1" to "a", "KEY2" to "b"),
             to = token)
 
         FcmTriggerApiService.getInstance().createFCMNotification(
